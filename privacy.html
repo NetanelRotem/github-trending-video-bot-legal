@@ -1,58 +1,99 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — GitHub Trending Video Bot</title>
+<title>Privacy Policy — LYLA</title>
 <style>
-  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1a1a1a; }
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.15rem; margin-top: 2em; }
-  footer { margin-top: 3em; color: #666; font-size: 0.9rem; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #0d0d0d; color: #f0f0f0; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1a0a00 0%, #2a1200 50%, #1a0800 100%); border-bottom: 1px solid #FF7043; padding: 32px 24px; display: flex; align-items: center; gap: 20px; }
+  header img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #FF7043; }
+  header .brand { display: flex; flex-direction: column; }
+  header .brand a { font-size: 1.5rem; font-weight: 900; text-decoration: none; background: linear-gradient(90deg, #FF7043, #FFC107); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.06em; }
+  header .brand span { font-size: 0.85rem; color: #888; margin-top: 2px; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 2rem; font-weight: 800; color: #FF7043; margin-bottom: 8px; }
+  .meta { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+  h2 { font-size: 1.1rem; font-weight: 700; color: #FFC107; margin: 40px 0 12px; padding-left: 14px; border-left: 3px solid #FF7043; }
+  p { color: #b0b0b0; line-height: 1.75; font-size: 0.97rem; margin-bottom: 12px; }
+  ul { color: #b0b0b0; line-height: 1.75; font-size: 0.97rem; padding-left: 24px; margin-bottom: 12px; }
+  ul li { margin-bottom: 6px; }
+  code { background: #1e1e1e; color: #FF7043; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  a { color: #FFC107; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 32px 24px; color: #444; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+  footer a { color: #FF7043; }
 </style>
 </head>
 <body>
+<header>
+  <img src="lyla.png" alt="LYLA">
+  <div class="brand">
+    <a href="index.html">LYLA</a>
+    <span>GitHub Trending on TikTok</span>
+  </div>
+</header>
+<main>
   <h1>Privacy Policy</h1>
-  <p><strong>App:</strong> GitHub Trending Video Bot &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-07-06</p>
+  <p class="meta"><strong>App:</strong> LYLA &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-07-10</p>
 
   <p>
-    GitHub Trending Video Bot is a personal, single-account automation tool that generates
-    short videos summarizing trending GitHub repositories and publishes them to the operator's
-    own TikTok account using TikTok's Content Posting API. It is not a multi-user service and
-    does not act on behalf of any TikTok account other than the one its operator has explicitly
-    authorized.
+    LYLA is a personal automation tool that generates short videos summarizing trending GitHub
+    repositories and publishes them to the operator's own TikTok account using TikTok's Content
+    Posting API. Only one TikTok account — belonging to the bot's creator — is ever involved.
   </p>
 
-  <h2>What information we access</h2>
-  <p>
-    When the operator connects their TikTok account via TikTok Login Kit, the app receives:
-  </p>
+  <h2>Information We Access</h2>
+  <p>When the operator authorizes the app via TikTok Login Kit, the app receives:</p>
   <ul>
-    <li>The account's TikTok Open ID (an opaque identifier)</li>
-    <li>The account's public display name and avatar (used only to confirm which account a video is about to be published to)</li>
+    <li>The account's TikTok Open ID (an opaque, non-personally identifiable identifier)</li>
+    <li>The account's public display name and avatar — used only to confirm which account a video is about to be published to</li>
     <li>An OAuth access token and refresh token scoped to <code>video.publish</code>, used solely to upload and publish videos to that same account</li>
   </ul>
 
-  <h2>What we do with it</h2>
+  <h2>How We Use It</h2>
   <p>
-    This information is used only to authenticate API requests and to publish videos to the
-    authorized account. It is stored locally on the operator's own machine and is never sold,
-    shared, or transmitted to any third party. No video content, account data, or tokens are
-    sent anywhere other than TikTok's own API endpoints.
+    This information is used exclusively to authenticate API requests and to publish videos.
+    It is stored locally on the operator's machine and is never sold, shared, or transmitted
+    to any third party. No video content, account data, or tokens are sent anywhere other than
+    TikTok's own API endpoints.
   </p>
 
-  <h2>Data retention</h2>
+  <h2>Data Retention</h2>
   <p>
-    Access and refresh tokens are kept locally until the operator revokes access (via TikTok's
-    account settings) or deletes them. No other personal data is retained.
+    Access and refresh tokens are stored locally until the operator revokes access via TikTok's
+    account settings or deletes them manually. No other personal data is retained by the app.
   </p>
 
-  <h2>Third parties</h2>
+  <h2>Cookies</h2>
+  <p>LYLA does not use cookies. This website contains no tracking, analytics, or third-party scripts.</p>
+
+  <h2>Data Security</h2>
+  <p>
+    Credentials are stored only on the operator's own machine and are not transmitted to any
+    external server. The operator is responsible for maintaining the security of their local
+    environment.
+  </p>
+
+  <h2>Your Rights</h2>
+  <p>
+    If you believe any data related to your account has been processed in error, you may contact
+    us at the address below and we will respond within 30 days. You may also revoke this app's
+    access to your TikTok account at any time through TikTok's security settings.
+  </p>
+
+  <h2>Third Parties</h2>
   <p>We do not share any data with third parties. The only external service contacted is TikTok's own API.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>Any updates to this privacy policy will be reflected on this page with an updated date.</p>
 
   <h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:bneibrak47@gmail.com">bneibrak47@gmail.com</a></p>
-
-  <footer>GitHub Trending Video Bot — Privacy Policy</footer>
+</main>
+<footer>
+  &copy; 2026 LYLA · <a href="index.html">Home</a> · <a href="terms.html">Terms of Service</a>
+</footer>
 </body>
 </html>
