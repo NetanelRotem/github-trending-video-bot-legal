@@ -3,123 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LYLA — GitHub Trending on TikTok</title>
+<title>github-trending-ripos — GitHub Trending on TikTok</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    background: #0d0d0d;
-    color: #f0f0f0;
-    min-height: 100vh;
-  }
-  header {
-    background: linear-gradient(135deg, #1a0a00 0%, #2a1200 50%, #1a0800 100%);
-    border-bottom: 1px solid #FF7043;
-    padding: 48px 24px 40px;
-    text-align: center;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #0d0d0d; color: #f0f0f0; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1a0a00 0%, #2a1200 50%, #1a0800 100%); border-bottom: 1px solid #FF7043; padding: 48px 24px 40px; text-align: center; }
   .logo-wrap { margin-bottom: 24px; }
-  .logo-wrap img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #FF7043;
-    box-shadow: 0 0 32px rgba(255,112,67,0.45);
-  }
-  header h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    background: linear-gradient(90deg, #FF7043, #FFC107);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 10px;
-  }
-  header p.tagline {
-    font-size: 1.15rem;
-    color: #c0b090;
-    max-width: 500px;
-    margin: 0 auto;
-  }
+  .logo-wrap img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #FF7043; box-shadow: 0 0 32px rgba(255,112,67,0.45); }
+  header h1 { font-size: 2.4rem; font-weight: 900; letter-spacing: 0.04em; background: linear-gradient(90deg, #FF7043, #FFC107); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+  header p.tagline { font-size: 1.1rem; color: #c0b090; max-width: 500px; margin: 0 auto; }
   main { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
-  .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 24px;
-  }
-  .card h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #FF7043;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .card h2 .icon { font-size: 1.5rem; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+  .card h2 { font-size: 1.2rem; font-weight: 700; color: #FF7043; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .card h2 .icon { font-size: 1.4rem; }
   .card p { color: #b0b0b0; line-height: 1.7; font-size: 0.97rem; }
   .steps { list-style: none; margin-top: 12px; }
-  .steps li {
-    color: #b0b0b0;
-    line-height: 1.7;
-    font-size: 0.97rem;
-    padding: 6px 0;
-    padding-left: 28px;
-    position: relative;
-  }
-  .steps li::before {
-    content: "→";
-    color: #FFC107;
-    position: absolute;
-    left: 0;
-  }
-  .legal-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
-  .legal-links a {
-    display: inline-block;
-    background: linear-gradient(135deg, #FF7043, #e64a19);
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
+  .steps li { color: #b0b0b0; line-height: 1.7; font-size: 0.97rem; padding: 6px 0 6px 28px; position: relative; }
+  .steps li::before { content: "→"; color: #FFC107; position: absolute; left: 0; }
+  .legal-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+  .legal-links a { display: inline-block; background: linear-gradient(135deg, #FF7043, #e64a19); color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; transition: transform 0.15s, box-shadow 0.15s; }
   .legal-links a:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,112,67,0.4); }
-  .legal-links a.secondary {
-    background: transparent;
-    border: 2px solid #FF7043;
-    color: #FF7043;
-  }
+  .legal-links a.secondary { background: transparent; border: 2px solid #FF7043; color: #FF7043; }
   .legal-links a.secondary:hover { background: rgba(255,112,67,0.1); }
-  footer {
-    text-align: center;
-    padding: 32px 24px;
-    color: #444;
-    font-size: 0.85rem;
-    border-top: 1px solid #1a1a1a;
-  }
+  footer { text-align: center; padding: 32px 24px; color: #444; font-size: 0.85rem; border-top: 1px solid #1a1a1a; }
   footer a { color: #FF7043; text-decoration: none; }
 </style>
 </head>
 <body>
 <header>
-  <div class="logo-wrap"><img src="lyla.png" alt="LYLA mascot"></div>
-  <h1>LYLA</h1>
+  <div class="logo-wrap"><img src="lyla.png" alt="github-trending-ripos mascot"></div>
+  <h1>github-trending-ripos</h1>
   <p class="tagline">Your daily GitHub Trending digest — served fresh on TikTok</p>
 </header>
 <main>
   <div class="card">
-    <h2><span class="icon">🐹</span> What is LYLA?</h2>
+    <h2><span class="icon">📱</span> What is github-trending-ripos?</h2>
     <p>
-      LYLA is an automated content bot that discovers the most exciting open-source projects
-      on GitHub every single day and turns them into short, engaging TikTok videos.
-      From trending AI tools to developer utilities — LYLA finds them, narrates them, and posts them
-      so the developer community never misses what's next.
+      github-trending-ripos is an automated content bot that discovers the most exciting
+      open-source projects on GitHub every single day and turns them into short, engaging
+      TikTok videos. From trending AI tools to developer utilities — it finds them, narrates
+      them, and posts them so the developer community never misses what's next.
     </p>
   </div>
   <div class="card">
@@ -133,19 +56,26 @@
   </div>
   <div class="card">
     <h2><span class="icon">📋</span> Legal</h2>
-    <p>Read about how LYLA handles data and the terms under which it operates.</p>
-    <div class="legal-links" style="margin-top:20px;">
+    <p>Read about how github-trending-ripos handles data and the terms under which it operates.</p>
+    <div class="legal-links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html" class="secondary">Terms of Service</a>
     </div>
   </div>
   <div class="card">
     <h2><span class="icon">✉️</span> Contact</h2>
-    <p>Questions or concerns? Reach out at <a href="mailto:bneibrak47@gmail.com" style="color:#FFC107;">bneibrak47@gmail.com</a></p>
+    <p>Questions or concerns? <span id="contact-link"></span></p>
+    <script>
+      (function(){
+        var u='bneibrak47',d='gmail.com';
+        var el=document.getElementById('contact-link');
+        el.innerHTML='<a href="mailto:'+u+'@'+d+'" style="color:#FFC107;">'+u+'@'+d+'</a>';
+      })();
+    </script>
   </div>
 </main>
 <footer>
-  &copy; 2026 LYLA · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+  &copy; 2026 github-trending-ripos &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a>
 </footer>
 </body>
 </html>
